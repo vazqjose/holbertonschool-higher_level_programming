@@ -5,4 +5,3 @@ for n in range(0, 99):
     else:
         print('{}, '.format(n), end='')
 print('99')
-
