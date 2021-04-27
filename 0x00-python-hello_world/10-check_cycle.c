@@ -14,10 +14,9 @@ int check_cycle(listint_t *list)
 		fast  = fast->next->next;
 		if (slow == fast)
 		{
-			printf("Linked list has a cycle\n");
-			return;
+			return(1);
 		}
 	}
-	printf("Linked list has no cycle\n");
+	return(0);
 }
 
