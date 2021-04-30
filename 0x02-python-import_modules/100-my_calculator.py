@@ -20,13 +20,13 @@ if __name__ == "__main__":
         exit(1)
 
     if operator == '+':
-        print(add(a, b))
+        print('{} {} {} = {}'.format(a, operator, b, add(a, b)))
 
     if operator == '-':
-        print(sub(a, b))
+        print('{} {} {} = {}'.format(a, operator, b, sub(a, b)))
 
     if operator == '*':
-        print(mul(a, b))
+        print('{} {} {} = {}'.format(a, operator, b, mul(a, b)))
 
     if operator == '/':
-        print(div(a, b))
+        print('{} {} {} = {}'.format(a, operator, b, div(a, b)))
