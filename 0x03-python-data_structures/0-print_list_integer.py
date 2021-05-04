@@ -2,7 +2,7 @@
 
 def print_list_integer(my_list=[]):
 
-    length = len(my_mylist)
+    length = len(my_list)
     if length == 0:
         return (None)
 
