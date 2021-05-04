@@ -6,6 +6,9 @@ def new_in_list(my_list, idx, element):
     elif idx > len(my_list) - 1:
         return(my_list)
 
-    listcpy = my_list
-    listcpy[idx] = element
-    return (listcpy)
+    if my_list is None:
+        exit
+    else:
+        listcpy = my_list
+        listcpy[idx] = element
+        return (listcpy)
