@@ -2,7 +2,6 @@
 
 def safe_print_list(my_list=[], x=0):
 
-    list2 = []
     i = 0
 
     try:
@@ -14,4 +13,5 @@ def safe_print_list(my_list=[], x=0):
         return i
 
     except IndexError:
+        print()
         return i
