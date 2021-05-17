@@ -6,16 +6,12 @@ def safe_print_list(my_list=[], x=0):
     i = 0
 
     try:
-        for n in my_list:
-            print('{}'.format(n), end='')
+        for n in range(0, x):
+            print('{}'.format(my_list[n]), end='')
             i += 1
 
         print()
         return i
 
     except IndexError:
-        print("index out of range")
-    except:
-        print("unknown error")
-
-
+        return i
