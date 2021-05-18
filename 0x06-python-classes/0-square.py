@@ -1,3 +1,8 @@
 #!/usr/bin/python3
 class Square:
-    pass # empty block
+    """
+        We are creating the Square class
+    """
+    pass
+
+help(Square)
