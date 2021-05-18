@@ -2,6 +2,7 @@
 
 """ lets add an attribute to our class """
 
+
 class Square:
     """ create the size attribute """
 
