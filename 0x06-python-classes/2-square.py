@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 """ lets add an attribute to our class """
 
 
@@ -13,8 +14,7 @@ class Square:
 
         """ validate the size variablo received from calling program """
 
-
-        if not size.isdigit():
+        if not self.__size.isdigit():
             raise TypeError("size must be an integer")
 
         if self.__size < 0:
