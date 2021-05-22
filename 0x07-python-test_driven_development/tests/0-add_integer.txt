@@ -1,0 +1,124 @@
+# To run these tests type: python3 -m doctest -v ./tests/0-add_integer.txt
+
+========================================
+	IMPORT THE MODULE
+========================================
+>>> add_integer = __import__('0-add_integer').add_integer
+
+
+========================================
+	EXPECTING SUCCESS CASES
+========================================
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(-100, 2)
+-98
+
+>>> add_integer(-50, -10)
+-60
+
+>>> add_integer(10)
+108
+
+========================================
+	EXPECTING FAILURE CASES
+========================================
+
+
+================================= 1ST ARGUMENT
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer("School")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer("School", 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer((5, 3, 3), 56)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer([5, 3, 3], 56)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer({5, 3, 3}, 56)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(None, 56)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer('', 56)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer('a', 56)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer('2011-11-04 00:05:23.283+00:00', 56)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+========================== 2ND ARGUMENT
+
+>>> add_integer(4, (2, 56, 2))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(4, [2, 2])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(4, {2, 2, 6})
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(4, 'c')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(4, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(4, '')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(4, '2011-11-04 00:05:23.283+00:00')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(5, 3, 9)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
