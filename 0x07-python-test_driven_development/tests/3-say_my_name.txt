@@ -1,0 +1,48 @@
+# To run these tests type: python3 -m doctest -v ./tests/3-say_my_name.txt
+
+========================================
+	IMPORT THE MODULE
+========================================
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+========================================
+	EXPECTING SUCCESS CASES
+========================================
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+========================================
+	EXPECTING FAIL CASES
+========================================
+>>> say_my_name(32, "Smith")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("John", 2)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name("")
+My name is  
+
+>>> say_my_name('bob', 'the', 'builder')
+Traceback (most recent call last):
+...
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+>>> say_my_name([3, 4, 5])
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("John", [3, 4, 5])
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
