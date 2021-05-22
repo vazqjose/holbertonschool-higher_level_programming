@@ -1,0 +1,50 @@
+# To run these tests type: python3 -m doctest -v ./tests/4-print_square.txt
+
+========================================
+	IMPORT THE MODULE
+========================================
+>>> print_square = __import__('4-print_square').print_square 
+
+========================================
+	EXPECTING SUCCESS CASES
+========================================
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(0)
+
+========================================
+	EXPECTING FAIL CASES
+========================================
+>>> print_square(-4)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+>>> print_square('s')
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(['2'])
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square({'2'})
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(('2'))
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(2.5)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
