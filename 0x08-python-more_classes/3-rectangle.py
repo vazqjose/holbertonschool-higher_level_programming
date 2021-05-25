@@ -11,10 +11,17 @@ class Rectangle:
         self.height = height
 
     def __str__(self):
-        rectangle = ''
-        for i in range(self.height):
-            rectangle = rectangle + ('#' * self.width) + '\n'
-        return rectangle
+        if self.width == 0 or self.height == 0:
+            return ("")
+
+        myRect = ""
+        for i in range(self.__height):
+            myRect += "#" * self.__width
+
+            if i + 1 < self.__height:
+                myRect += "\n"
+
+        return myRect
 
     @property
     def width(self):
