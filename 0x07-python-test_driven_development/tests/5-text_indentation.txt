@@ -1,0 +1,47 @@
+# To run these tests type: python3 -m doctest -v ./tests/5-text_indentation.txt
+
+========================================
+	IMPORT THE MODULE
+========================================
+>>>text_indentation = __import__('5-text_indentation').text_indentation
+
+========================================
+	EXPECTING SUCCESS CASES
+========================================
+>>> text_indentation("hello world")
+hello world
+
+>>> text_indentation("hello:dear.world?")
+hello:
+
+dear,
+
+world?
+
+========================================
+	EXPECTING FAIL CASES
+========================================
+>>> text_indentation(5000)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(5,000)
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation("test \ ", "here")
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation([1,2,3])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation((1,2,3))
+Traceback (most recent call last):
+...
+TypeError: text must be a string
