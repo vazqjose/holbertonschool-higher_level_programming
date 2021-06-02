@@ -17,6 +17,18 @@
 	>>> my_list.append(8)
 	>>> print(my_list)
 	[35, 10, 21, 8]
+	>>> my_list.print_sorted()
+	[8, 10, 21, 35]
+
+	>>> my_list = MyList()
+	>>> my_list.append(-35)
+	>>> my_list.append(-10)
+	>>> my_list.append(-21)
+	>>> my_list.append(8)
+	>>> print(my_list)
+	[-35, -10, -21, 8]
+	>>> my_list.print_sorted()
+	[-35, -21, -10, 8]
 
 	>>> my_list = MyList()
 	>>> my_list.append(35)
@@ -29,6 +41,26 @@
 	>>> my_list.append(None)
 	>>> print(my_list)
 	['d', None]
+
+	>>> my_list = MyList()
+	>>> my_list.append(50)
+	>>> print(my_list)
+	[50]
+
+	>>> my_list = MyList()
+	>>> my_list.append(-50)
+	>>> print(my_list)
+	[-50]
+
+	>>> my_list = MyList()
+	>>> my_list.append('2')
+	>>> print(my_list)
+	['2']
+
+	>>> my_list = MyList()
+	>>> my_list.append(None)
+	>>> print(my_list)
+	[None]
 
 	>>> my_list = MyList()
 	>>> print(my_list)
@@ -45,4 +77,12 @@
 	>>> my_list.append([22, 'w', 5])
 	>>> print(my_list)
 	[35, [22, 'w', 5]]
+
+	>>> my_list = MyList()
+	>>> my_list.append(35)
+	>>> my_list.append(10)
+	>>> my_list.append(21)
+	>>> my_list.append(8)
+	>>> my_list.print_sorted()
+	[8, 10, 21, 35]
 
