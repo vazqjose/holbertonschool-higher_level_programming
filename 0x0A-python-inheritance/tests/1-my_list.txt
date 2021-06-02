@@ -4,15 +4,29 @@
 	import the module
 =========================================
 
->>> my_list = __import___('1-my_list').my_list
+	>>> MyList = __import__('1-my_list').MyList
 
 =========================================
 	success cases
 =========================================
 
->>> MyList([12, 65, 23, 78])
-[12, 23, 65, 78]
+	>>> my_list = MyList()
+	>>> my_list.append(35)
+	>>> my_list.append(10)
+	>>> my_list.append(21)
+	>>> my_list.append(8)
+	>>> print(my_list)
+	[35, 10, 21, 8]
 
-=========================================
-	fail cases
-=========================================
+	>>> my_list = MyList()
+	>>> my_list.append(35)
+	>>> my_list.append('2')
+	>>> print(my_list)
+	[35, '2']
+
+	>>> my_list = MyList()
+	>>> my_list.append('d')
+	>>> my_list.append(None)
+	>>> print(my_list)
+	['d', None]
+
