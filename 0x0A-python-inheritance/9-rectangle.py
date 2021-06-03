@@ -13,14 +13,14 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """ initiate objects and call parent method """
 
-        self.__width = width
         super().integer_validator("width", width)
+        self.__width = width
 
-        self.__height = height
         super().integer_validator("height", height)
+        self.__height = height
 
-    def area():
-        return(self.__width, self.__heigth)
+    def area(self):
+        return(self.__width * self.__height)
 
-    def print():
-        pass
+    def __str__(self):
+        return ("[{}] {}/{}".format(self.__class__.__name__, self.__width, self.__height))
