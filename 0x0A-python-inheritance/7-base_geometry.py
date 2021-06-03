@@ -7,7 +7,6 @@ Write a class BaseGeometry (based on 6-base_geometry.py)
 class BaseGeometry:
     """ class of base geometry """
 
-
     def area(self):
         raise Exception("area() is not implemented")
 
