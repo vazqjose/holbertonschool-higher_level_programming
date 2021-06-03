@@ -10,3 +10,47 @@
 	success cases
 =========================================
 
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", 89)
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", '34')
+	Traceback (most recent call last):
+	...
+	TypeError: my_int must be an integer
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", None)
+	Traceback (most recent call last):
+	...
+	TypeError: width must be an integer
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("batman", "hello")
+	Traceback (most recent call last):
+	...
+	TypeError: batman must be an integer
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("batman", 0)
+	Traceback (most recent call last):
+	...
+	TypeError: batman must be greater than 0
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("batman", -5)
+	Traceback (most recent call last):
+	...
+	TypeError: batman must be greater than 0
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator(-6, -6)
+	Traceback (most recent call last):
+	...
+	TypeError: -6 must be greater than 0
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator(0, 0)
+	Traceback (most recent call last):
+	...
+	TypeError: 0 must be greater than 0
