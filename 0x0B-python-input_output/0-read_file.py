@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" open and read a text file """
+""" open and read a text file as parameter """
 
 
 def read_file(filename=""):
