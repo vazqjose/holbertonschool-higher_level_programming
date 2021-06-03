@@ -1,0 +1,12 @@
+# To run these tests type: python3 -m doctest -v ./tests/7-base_geometry.txt
+
+=========================================
+	import the module
+=========================================
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+=========================================
+	success cases
+=========================================
+
