@@ -20,6 +20,7 @@ class Rectangle(BaseGeometry):
         super().integer_validator("height", height)
 
     def area():
+        pass
 
     def print():
-
+        pass
