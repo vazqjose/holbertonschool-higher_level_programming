@@ -13,4 +13,4 @@ def inherits_from(obj, a_class):
         a_class: class to check against
     """
 
-    return(issubclass(type(obj), a_class))
+    return(type(obj) is not a_class and issubclass(type(obj), a_class))
