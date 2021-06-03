@@ -5,6 +5,6 @@
 def read_file(filename=""):
     """ receive file name and attempt to open/read it """
 
-    with open("my_file_0.txt") as f:
+    with open(filename) as f:
         for line in f:
             print(line, end="")
