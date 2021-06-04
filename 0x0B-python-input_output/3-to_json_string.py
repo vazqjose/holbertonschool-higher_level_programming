@@ -2,10 +2,8 @@
 """ function that returns the JSON representation of an object (string) """
 
 
-import json
-""" import the json module """
-
 def to_json_string(my_obj):
     """ received a Python object as arg """
 
+    import json
     return json.dumps(my_obj)
