@@ -21,11 +21,10 @@ class Student:
             return(self.__dict__)
         else:
             for n in attrs:
-                #  if n exists in self.__dict__[key][value]
                 if n in self.__dict__.keys():
                     myDict[n] = self.__dict__[n]
             return myDict
 
     def reload_from_json(self, json):
-        for key, value in json.items(): # ("Fake", "Fake", 89)
+        for key, value in json.items():
             setattr(self, key, value)
