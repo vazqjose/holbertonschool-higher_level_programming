@@ -104,7 +104,6 @@ class Rectangle(Base):
 
         print(myRect)
 
-
     def __str__(self):
         """
         Lets replace the str method
@@ -147,4 +146,3 @@ class Rectangle(Base):
                     self.__x = val
                 if key == "y":
                     self.__y = val
-
