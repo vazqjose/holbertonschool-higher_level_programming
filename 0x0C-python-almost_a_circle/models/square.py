@@ -25,6 +25,8 @@ class Square(Rectangle):
         Rectangle.width.fset(self, value)
 
     def __str__(self):
+        """ Replace str function """
+
         return ("[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
                                               self.id, self.x, self.y,
                                               super().width))
@@ -59,4 +61,6 @@ class Square(Rectangle):
                     self.y = val
 
     def to_dictionary(self):
+        """ Returns a dictionary representation of this class """
+
         return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
