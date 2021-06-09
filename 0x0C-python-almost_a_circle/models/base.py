@@ -15,6 +15,10 @@ class constructor: def __init__(self, id=None):
     avoid duplicating the same code (by extension, same bugs)
 """
 
+
+import json
+
+
 class Base:
     """ Refer to private attr as Base.__nb_objects """
 
@@ -27,3 +31,23 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        else:
+            return (json.dumps(list_dictionaries))
+
+    def save_to_file(cls, list_objs):
+
+        myList = []
+        filename = cls.__name__ + ".json"
+
+        if list_objs is None or len(list_objs) == 0:
+            with open(filename, mode="w+", encoding="utf-8") as jsonfile:
+                json.dump(myList, jsonfile)
+        else:
+            for obj in list_objs:
+                myList.append(cls.to_dictionary(obj))
+
+        return jsonfile
