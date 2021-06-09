@@ -11,6 +11,8 @@ class Square(Rectangle):
     """ Class to inherit from parent class """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """ square constructor """
+
         self.x = x
         self.y = y
         self.size = size
@@ -18,10 +20,14 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """ property getter for parent class """
+
         return Rectangle.width.fget(self)
 
     @size.setter
     def size(self, value):
+        """ property getter for size of class """
+
         Rectangle.width.fset(self, value)
 
     def __str__(self):
