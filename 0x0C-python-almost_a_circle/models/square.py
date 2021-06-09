@@ -8,6 +8,7 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """ Class Square to inherit from Rectangle """
 
     def __init__(self, size, x=0, y=0, id=None):
         self.x = x
@@ -25,8 +26,9 @@ class Square(Rectangle):
 
     def __str__(self):
         return ("[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
-                                                 self.id, self.x, self.y,
-                                                 super().width))
+                                              self.id, self.x, self.y,
+                                              super().width))
+
     def update(self, *args, **kwargs):
         """
         1st argument should be the id attribute
@@ -57,5 +59,4 @@ class Square(Rectangle):
                     self.y = val
 
     def to_dictionary(self):
-        return {"id":self.id, "size":self.size, "x":self.x, "y":self.y}
-
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
