@@ -32,6 +32,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
@@ -42,10 +43,17 @@ class Base:
     def save_to_file(cls, list_objs):
         myList = []
         filename = cls.__name__ + ".json"
-        print (cls)
         if list_objs is not None or len(list_objs) > 0:
             for obj in list_objs:
                 myList.append(cls.to_dictionary(obj))
 
         with open(filename, mode="w", encoding="utf-8") as jsonfile:
             json.dump(myList, jsonfile)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return "[]"
+        else:
+            return json.loads(json_string)
+
