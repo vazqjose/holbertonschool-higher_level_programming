@@ -5,7 +5,7 @@
 -- Results must be sorted in ascending order by cities.id
 -- You are not allowed to use the JOIN keyword
 
-SELECT * FROM cities 
+SELECT cities.id, cities.name FROM cities, states
 	WHERE states.name = 'California'
 	AND
 	cities.state_id = states.id
