@@ -6,7 +6,7 @@
 -- 			tv_show_genres.genre_id
 -- 		-You can use only one SELECT statement
 
-SELECT tv_shows.title, tv_genres.id
+SELECT tv_shows.title, tv_show_genres.genre_id
 	FROM
 		tv_shows, tv_genres, tv_show_genres
 	WHERE
