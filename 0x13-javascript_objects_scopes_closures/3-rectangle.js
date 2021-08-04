@@ -23,11 +23,11 @@ class Rectangle {
     let j = 0;
     let rect = '';
 
-    for (i = 0; i <= this.height; i++) {
-      for (j = 0; j <= this.width; j++) {
+    for (i = 0; i < this.height; i++) {
+      for (j = 0; j < this.width; j++) {
         rect += 'X';
       }
-      if (i < this.height) {
+      if (i < this.height - 1) {
         rect += '\n';
       }
     }
