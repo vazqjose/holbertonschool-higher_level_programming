@@ -1,7 +1,7 @@
 ## 0x13. JavaScript - Objects, Scopes and Closures
 
 ### Learning Objectives
--Why JavaScript programming is amazing
+*Why JavaScript programming is amazing
 -How to create an object in JavaScript
 -What this means
 -What undefined means
