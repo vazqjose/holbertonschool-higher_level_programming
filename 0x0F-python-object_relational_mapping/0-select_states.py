@@ -25,6 +25,7 @@ myRow = result.fetchall()
 for row in myRow:
     print(row)
 
+db.close()
 """
 IN PHP BECAUSE F*CK IT!
 
