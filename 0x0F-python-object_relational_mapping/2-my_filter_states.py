@@ -25,3 +25,10 @@ result = dbConn.cursor()
 
 result.execute("SELECT states.id, states.name FROM states WHERE
                states.name='sys.argv[4]' ORDER BY states.id ASC")
+
+myRow = result.fetchall()
+
+for row in myRow:
+    print(row)
+
+dbConn.close();
