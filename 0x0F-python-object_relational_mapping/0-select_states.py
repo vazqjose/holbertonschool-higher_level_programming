@@ -28,3 +28,5 @@ for row in myRow:
     print(row)
 
 db.close()
+sys.exit()
+               
