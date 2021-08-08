@@ -18,17 +18,18 @@ in the states table of hbtn_0e_0_usa where name matches the argument.
 import sys
 import MySQLdb
 
-dbConn = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
+if __name__ == "__main__":
+    dbConn = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                             passwd=sys.argv[2], db=sys.argv[3])
 
-result = dbConn.cursor()
+    result = dbConn.cursor()
 
-result.execute("SELECT states.id, states.name FROM states WHERE
-               states.name='sys.argv[4]' ORDER BY states.id ASC")
+    result.execute("SELECT states.id, states.name FROM states WHERE
+                   states.name='sys.argv[4]' ORDER BY states.id ASC;")
 
-myRow = result.fetchall()
+    myRow = result.fetchall()
 
-for row in myRow:
-    print(row)
+    for row in myRow:
+        print(row)
 
-dbConn.close();
+    dbConn.close();
