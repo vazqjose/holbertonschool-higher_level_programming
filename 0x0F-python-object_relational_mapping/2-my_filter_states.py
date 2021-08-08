@@ -25,7 +25,7 @@ if __name__ == "__main__":
     dbname = sys.argv[3]
     state = sys.argv[4]
     sql = ("SELECT states.id, states.name FROM states WHERE \
-            states.name='states' ORDER BY states.id ASC;"
+            states.name='state' ORDER BY states.id ASC;"
     dbConn = MySQLdb.connect(host, user, passwd, dbname)
     result = dbConn.cursor()
 
@@ -37,4 +37,4 @@ if __name__ == "__main__":
     except:
         print("Could not display data")
 
-    dbConn.close();
+    dbConn.close()
