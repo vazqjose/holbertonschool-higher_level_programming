@@ -24,7 +24,7 @@ db = MySQLdb.connect(host="localhost", user=sys.argv[1],
 result = db.cursor()
 
 result.execute("SELECT states.id, states.name FROM states
-               WHERE states.name LIKE 'N%' ORDER BY states.id ASC ")
+               WHERE states.name LIKE 'N%' ORDER BY states.id ASC;")
 
 myRow = result.fetchall()
 
