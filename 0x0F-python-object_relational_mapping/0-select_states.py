@@ -15,12 +15,12 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1], 
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3])
     result = db.cursor()
     result.execute("SELECT states.id, states.name FROM states
-                    ORDER BY states.id ASC")
+                   ORDER BY states.id ASC")
     myRow = result.fetchall()
     for row in myRow:
         print(row)
-        db.close()      
+        db.close()
