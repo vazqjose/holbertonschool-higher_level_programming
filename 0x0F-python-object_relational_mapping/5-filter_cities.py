@@ -15,29 +15,33 @@ Write a script that lists all cities from the database hbtn_0e_4_usa
 import sys
 import MySQLdb
 
-dbConn = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
+if __name__ == "__main__":
 
-with dbConn.cursor() as result:
-    result.execute("""
-        SELECT
-            cities.name
-        FROM
-            states, cities
-        WHERE
-            cities.state_id = states.id
-        AND
-            states.name = %(state)s
-        ORDER BY
-            cities.id
-        ASC
-        """, {
-            'state': sys.argv[4]
-        })
+    host = 'localhost'
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    db = sys.argv[3]
+    state = sys.argv[4].split(' ')
+    state = state[0]
+    sql = "SELECT cities.id, cities.name, states.name FROM cities\
+            INNER JOIN states ON cities.state_id = states.id\
+            WHERE states.name LIKE BINARY '{}'\
+            ORDER BY cities.id ASC".format(state)
 
-    myRow = result.fetchall()
+    dbConn = MySQLdb.connect(host, user, passwd, db)
+    result = dbConn.cursor()
 
-    for row in myRow:
-        print(row)
+    try:
+        result.execute(sql)
+        myRows = result.fetchall()
+        cities = ''
+        for row in myRows:
+            cities += row[1]
+            cities += ", "
+        print(cities[:-2])
+
+    except:
+        print("Could not display data")
+        dbConn.rollback
 
     dbConn.close()
