@@ -20,7 +20,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host, user, passwd, dbname)
     result = db.cursor()
 
-    sql = "SELECT * FROM states ORDER BY states.id ASC"
+    sql = "SELECT * FROM states ORDER BY states.id ASC;"
 
     try:
         result.execute(sql)
