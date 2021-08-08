@@ -24,7 +24,7 @@ if __name__ == "__main__":
     passwd = sys.argv[2]
     dbname = sys.argv[3]
     sql = "SELECT states.id, states.name FROM states \
-            WHERE states.name LIKE 'N%' ORDER BY states.id ASC; "
+            WHERE states.name LIKE BINARY 'N%' ORDER BY states.id ASC; "
 
     db = MySQLdb.connect(host, user, passwd, dbname)
     result = db.cursor()
