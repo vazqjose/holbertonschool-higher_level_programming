@@ -26,6 +26,7 @@ if __name__ == "__main__":
     state = sys.argv[4]
     sql = ("SELECT states.id, states.name FROM states WHERE \
             states.name='state' ORDER BY states.id ASC;"
+
     dbConn = MySQLdb.connect(host, user, passwd, dbname)
     result = dbConn.cursor()
 
