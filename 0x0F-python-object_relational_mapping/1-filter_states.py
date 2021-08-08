@@ -18,17 +18,23 @@ from the database hbtn_0e_0_usa:
 import sys
 import MySQLdb
 
-db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                     passwd=sys.argv[2], db=sys.argv[3])
+if __name__ == "__main__":
+    host = "localhost"
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    dbname = sys.argv[3]
+    sql = "SELECT states.id, states.name FROM states \
+            WHERE states.name LIKE 'N%' ORDER BY states.id ASC; "
 
-result = db.cursor()
+    db = MySQLdb.connect(host, user, passwd, dbname)
+    result = db.cursor()
 
-result.execute("SELECT states.id, states.name FROM states
-               WHERE states.name LIKE 'N%' ORDER BY states.id ASC;")
+    try:
+        result.execute(sql)
+        myRows = result.fetchall()
+        for row in myRows:
+            print(row)
+    except:
+        print("Could not display data")
 
-myRow = result.fetchall()
-
-for row in myRow:
-    print(row)
-
-db.close()
+    db.close()
