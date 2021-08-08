@@ -15,25 +15,31 @@ Write a script that lists all cities from the database hbtn_0e_4_usa
 import sys
 import MySQLdb
 
-dbConn = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3])
+if __name__ == "__main__":
 
-with dbConn.cursor() as result:
-    result.execute("""
-        SELECT
-            cities.id, cities.name, states.name
-        FROM
-            states, cities
-        WHERE
-            cities.state_id = states.id
-        ORDER BY
-            cities.id
-        ASC
-        """)
+    host = "localhost"
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    db = sys.argv[3]
 
-    myRow = result.fetchall()
+    dbConn = MySQLdb.connect(host, user, passwd, db)
 
-    for row in myRow:
-        print(row)
+    with dbConn.cursor() as result:
+        result.execute("""
+            SELECT
+                cities.id, cities.name, states.name
+            FROM
+                states, cities
+            WHERE
+                cities.state_id = states.id
+            ORDER BY
+                cities.id
+            ASC
+            """)
 
-    dbConn.close()
+        myRow = result.fetchall()
+
+        for row in myRow:
+            print(row)
+
+        dbConn.close()
