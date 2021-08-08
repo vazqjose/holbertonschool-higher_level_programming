@@ -20,4 +20,5 @@ if __name__ == "__main__":
     myRow = result.fetchall()
     for row in myRow:
         print(row)
-        db.close()
+    
+    db.close()
