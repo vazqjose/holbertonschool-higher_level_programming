@@ -28,20 +28,3 @@ for row in myRow:
     print(row)
 
 db.close()
-"""
-IN PHP BECAUSE F*CK IT!
-
-$myquery = mysql_query("SELECT states.id, states.name FROM states
-                       ORDER BY states.id ASC") or die(mysql_errror());
-
-if (mysql_num_rows($myquery == 0)
-{
-    echo "Table is empty";
-}
-
-while ($myrow = mysql_fetch_assoc($myquery))
-{
-        echo $myrow['id'];
-        echo $myrow['name'];
-}
-"""
