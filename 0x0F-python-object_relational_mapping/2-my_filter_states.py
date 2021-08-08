@@ -19,17 +19,22 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    dbConn = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                             passwd=sys.argv[2], db=sys.argv[3])
-
+    host = "localhost"
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    dbname = sys.argv[3]
+    state = sys.argv[4]
+    sql = ("SELECT states.id, states.name FROM states WHERE \
+            states.name='states' ORDER BY states.id ASC;"
+    dbConn = MySQLdb.connect(host, user, passwd, dbname)
     result = dbConn.cursor()
 
-    result.execute("SELECT states.id, states.name FROM states WHERE
-                   states.name='sys.argv[4]' ORDER BY states.id ASC;")
-
-    myRow = result.fetchall()
-
-    for row in myRow:
-        print(row)
+    try:
+        result.execute(sql)
+        myRow = result.fetchall()
+        for row in myRow:
+            print(row)
+    except:
+        print("Could not display data")
 
     dbConn.close();
