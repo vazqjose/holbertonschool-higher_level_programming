@@ -16,7 +16,7 @@ State and an instance Base = declarative_base():
 from sqlalquemy.ext.declarative import declarative_base
 from sqlalquemy import Column, Integer, String
 
-Base = declarative_pase()
+Base = declarative_base()
 
 
 class State(Base):
