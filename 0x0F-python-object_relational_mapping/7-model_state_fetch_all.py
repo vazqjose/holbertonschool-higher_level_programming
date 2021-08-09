@@ -24,3 +24,9 @@ if __name__ == "__main__":
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         user, passwd, dbname), pool_pre_ping=True)
+
+    Session = sessionmaker(engine)
+    mySession = Session()
+
+    for state in mySession.query(State).order_by(State.id):
+        print("{}: {}".format(state.id, state.name))
