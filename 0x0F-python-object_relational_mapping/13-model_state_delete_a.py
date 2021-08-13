@@ -15,7 +15,7 @@ containing the letter a from the database
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, delete
 
 if __name__ == "__main__":
     user = sys.argv[1]
@@ -27,5 +27,9 @@ if __name__ == "__main__":
 
     Session = sessionmaker(engine)
     mySession = Session()
-    mySession.query(State).filter(State.name.like('%a%')).delete()
+
+    statesToRemove = mySession.query(State).filter(State.name.like('%a%'))
+    for state in statesToRemove:
+        mySession.delete(state)
+
     mySession.commit()
