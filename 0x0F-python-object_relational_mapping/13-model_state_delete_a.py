@@ -29,4 +29,3 @@ if __name__ == "__main__":
     mySession = Session()
     mySession.query(State).filter(State.name.like('%a%')).delete()
     mySession.commit()
-
