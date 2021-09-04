@@ -17,7 +17,7 @@ if __name__ == "__main__":
     url = sys.argv[1]
 
     data = urllib.parse.urlencode(email).encode('utf8')
-    req = urllib.request.Request(url, email)
+    req = urllib.request.Request(url, data)
 
     with urllib.request.urlopen(req) as response:
         page = response.read().decode('utf-8')
