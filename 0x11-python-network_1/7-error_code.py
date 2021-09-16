@@ -11,7 +11,10 @@ import sys
 
 if __name__ == "__main__":
 
-    res = int(requests.get(sys.argv[1]))
+    res = requests.get(sys.argv[1])
+    code = res.status_code
 
-    if res >= 400:
-        print("Error code: {}".format(res))
+    if code >= 400:
+        print("Error code: {}".format(code))
+    else:
+        print(res.content)
