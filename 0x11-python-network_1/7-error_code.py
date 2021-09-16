@@ -16,5 +16,6 @@ if __name__ == "__main__":
 
     if code >= 400:
         print("Error code: {}".format(code))
-    else:
-        print(res.content)
+        exit
+
+    print(res.text)
